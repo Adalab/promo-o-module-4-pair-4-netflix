@@ -2,25 +2,25 @@
   {
     "id": "1",
     "title": "Gambita de dama",
-    "genre": "Drama",
+    "gender": "Drama",
     "image": "//localhost:4000/gambita-de-dama.jpg"
   },
   {
     "id": "2",
     "title": "Friends",
-    "genre": "Comedia",
+    "gender": "Comedia",
     "image": "//localhost:4000/friends.jpg"
   },
   {
     "id": "3",
     "title": "La loca aventura de las galaxias",
-    "genre": "Comedia",
+    "gender": "Comedia",
     "image": "https://via.placeholder.com/150"
   },
   {
     "id": "4",
     "title": "Dora la exploradora",
-    "genre": "Comedia",
+    "gender": "Comedia",
     "image": "https://via.placeholder.com/150"
   }
 ]
