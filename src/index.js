@@ -23,9 +23,18 @@ const db = new Database('./src/db/database.db', {
 
 //endpoints
 app.get('/movies', (req, res) => {
-  const query = db.prepare(`SELECT * FROM movies WHERE gender = UPPER(?)`);
-  const gender = `${req.query.gender}`;
-  const movies = query.all(gender.toUpperCase());
+  let movies;
+  if( req.query.gender ) {
+    const query = db.prepare(`SELECT * FROM movies WHERE UPPER(gender) = ?`);
+    const gender = req.query.gender.toUpperCase();
+    console.log(gender);
+    movies = query.all(gender);
+  }
+  else {
+    const query = db.prepare(`SELECT * FROM movies`);
+    movies = query.all();
+  }
+
   const response = {
     success: true,
     movies: movies,
