@@ -21,7 +21,7 @@ const db = new Database('./src/db/database.db', {
   verbose: console.log,
 });
 
-//endpoints
+//endpoints (static)
 app.get('/movies', (req, res) => {
   let movies;
   if( req.query.gender ) {
@@ -54,10 +54,10 @@ app.post('/login', (req, res) => {
 // endpoints with url params (dynamic server)
 app.get('/movie/:movieId', (req, res) => {
   const requestMovieId = req.params.movieId;
-  console.log(requestMovieId);
-  const movieData = movies.find((movie) => movie.id === requestMovieId);
-  console.log("MovieDATA: " + movieData);
-  res.render('movie', movieData);
+  const movieData = db.prepare(`SELECT * FROM movies WHERE id = ?`)
+  const movie = movieData.get(requestMovieId)
+  console.log(movie)
+  res.render('movie', movie)
 });
 
 //static servers
