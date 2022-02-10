@@ -51,12 +51,12 @@ app.post('/login', (req, res) => {
   res.json(response);
 });
 
-// endpoints with url params
+// endpoints with url params (dynamic server)
 app.get('/movie/:movieId', (req, res) => {
   const requestMovieId = req.params.movieId;
   console.log(requestMovieId);
   const movieData = movies.find((movie) => movie.id === requestMovieId);
-  console.log(movieData);
+  console.log("MovieDATA: " + movieData);
   res.render('movie', movieData);
 });
 
