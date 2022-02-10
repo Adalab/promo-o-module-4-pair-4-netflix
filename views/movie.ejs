@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="//localhost:4000/movie.scss">
-    <title>Película: <%=title%></title>
+    <link rel="stylesheet" type="text/css" href="/movie.css">
+    <title>Película: <%=name%></title>
 </head>
 <body>
-    <h1><%=title%></h1>
-    <ul>
-        <li><img src="<%=image%>" alt=""></li>
-        <li><strong>Género:</strong> <%=gender%></li>
-    </ul>
+    <article class="movie">
+        <h1><%=name%></h1>
+        <ul>
+            <li><img src="<%=image%>" alt=""></li>
+            <li><strong>Género:</strong> <%=gender%></li>
+        </ul>
+    </article>
 </body>
 </html>
